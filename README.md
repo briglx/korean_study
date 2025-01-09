@@ -8,6 +8,17 @@ You'll need to set up a development environment if you want to develop a new fea
 
 - Open the project in VSCode and it will prompt you to open the project in a devcontainer. This will have all the required tools installed and configured.
 
+```bash
+# load .env vars (optional)
+[ -f .env ] && while IFS= read -r line; do [[ $line =~ ^[^#]*= ]] && eval "export $line"; done < .env
+
+TOKEN_PWD=testreadonly
+TOKEN_NAME=testreadonly
+REGISTRY_NAME=lamoreauxlab
+
+echo "$TOKEN_PWD" | docker login --username "$TOKEN_NAME" --password-stdin "$REGISTRY_NAME.azurecr.io"
+```
+
 ### Setup local dev environment
 
 If you use the devcontainer image you need to log into the Container registry
