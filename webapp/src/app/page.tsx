@@ -19,7 +19,7 @@ export default function Home() {
         {/* Primary Pack */}
         <div className="bg-green-700 text-white flex flex-col p-8 flex-grow  p-8  shadow-xl rounded-lg mx-12 h-[70vh]">
 
-          <h2 className="text-3xl font-bold py-4 mb-4">Common Words</h2>
+          <h2 className="text-4xl font-bold py-4 mb-4">Common Words</h2>
 
           <p className="flex items-center my-2">
             <span className="mr-2">
@@ -39,17 +39,17 @@ export default function Home() {
 
             <div className="text-center">
                 <p className="text-5xl font-bold">22</p>
-                <p className="text-gray-300">LEARNING WORDS</p>
+                <p className="text-sm text-gray-300">LEARNING WORDS</p>
             </div>
             <div className="text-center">
                 <p className="text-5xl font-bold">3</p>
-                <p className="text-gray-300">MASTERED WORDS</p>
+                <p className="text-sm text-gray-300">MASTERED WORDS</p>
             </div>
             <div className="text-center">
               <p className="flex justify-center">
                 <CheckIcon className="h-12 w-12" />
               </p>
-              <p className="text-gray-300">TEST AVAILABLE</p>
+              <p className="text-sm text-gray-300">TEST AVAILABLE</p>
             </div>
           </div>
 
