@@ -18,6 +18,8 @@ export default function Page() {
         const prevButton = document.querySelector('.nav-button-left');
         const nextButton = document.querySelector('.nav-button-right');
 
+        console.log('slides', slides.length);
+
 
         // Add touch events for swipe
         if (carousel) {
@@ -161,8 +163,8 @@ export default function Page() {
         <div className="w-full max-w-6xl mx-auto">
 
             <header className="my-10 flex items-center justify-between mx-6">
-                <span className="text-3xl font-bold text-gray-900 ">PACKS</span>
-                <span className="text-lg text-gray-500 float-right">1/20</span>
+                <span className="text-3xl font-bold ">PACKS</span>
+                <span className="text-lg float-right">1/4</span>
             </header>
 
             {/* <!-- Carousel container --> */}
@@ -187,17 +189,17 @@ export default function Page() {
 
                 {/* <!-- Carousel track --> */}
                 <div className="carousel-track relative h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden">
-                    {/* <!-- Carousel items --> */}
+
                     <div className="carousel-item active absolute top-0 left-0 w-full h-full">
                         <div className="w-full h-full p-4 sm:p-8">
-                                <div className="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden relative group">
-                                    {/* <Image
-                                        src="https://images.unsplash.com/photo-1515462277126-2dd0c162007a?auto=format&fit=crop&q=80"
-                                        alt="Geometric art installation"
-                                        fill
-                                        className="absolute inset-0 w-full h-full transition-transform duration-500 group-hover:scale-110"
-                                    /> */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-violet-500 via-purple-900 to-black/90 "></div>
+                            <div className="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden relative group">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1515462277126-2dd0c162007a?auto=format&fit=crop&q=80"
+                                    alt="Geometric art installation"
+                                    fill
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/50 to-black/50 "></div>
                                 <div className="absolute inset-x-0 p-4 sm:p-8 ">
                                     <h3 className="text-white text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">Common Words</h3>
                                     <p className="flex items-center my-2 text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl">
@@ -239,12 +241,114 @@ export default function Page() {
                         </div>
                     </div>
 
-                    <div className="carousel-item next absolute top-0 left-0 w-full h-full">
+                    <div className="carousel-item hidden absolute top-0 left-0 w-full h-full">
                         <div className="w-full h-full p-4 sm:p-8">
                                 <div className="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden relative group">
                                 <Image
-                                        src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80"
-                                        alt="Futuristic tech setup"
+                                    src="https://images.unsplash.com/photo-1515462277126-2dd0c162007a?auto=format&fit=crop&q=80"
+                                    alt="Geometric art installation"
+                                    fill
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/50 to-black/50 "></div>
+                                <div className="absolute inset-x-0 p-4 sm:p-8 ">
+                                    <h3 className="text-white text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">News Words</h3>
+                                    <p className="flex items-center my-2 text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl">
+                                        <span className="mr-2">
+                                        <CheckBadgeIcon className="h-5 w-5" />
+                                        </span>
+                                        HARD
+                                    </p>
+                                    <p className="flex items-center my-2 text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl">
+                                        <span className="mr-2">
+                                        <HashtagIcon className="h-5 w-5" />
+                                        </span>
+                                        45 WORDS
+                                    </p>
+                                </div>
+                                {/* <div className="absolute inset-x-0 bottom-0 p-4 sm:p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent"> */}
+                                <div className="absolute inset-x-0 bottom-0 p-4 sm:p-8 ">
+
+
+                                    <div className="mt-auto flex  justify-between">
+
+                                        <div className="text-center">
+                                            <p className="text-xl sm:text-3xl md:text-5xl font-bold text-gray-200">45</p>
+                                            <p className="text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl">LEARNING WORDS</p>
+                                        </div>
+                                        <div className="text-center">
+                                            <p className="text-xl sm:text-3xl md:text-5xl font-bold text-gray-200">0</p>
+                                            <p className="text-sm text-gray-200">MASTERED WORDS</p>
+                                        </div>
+                                        <div className="text-center">
+                                        <p className="flex justify-center text-gray-200">
+                                            <CheckIcon className="h-7 w-7 sm:h-9 sm:w-9 md:h-12 md:w-12" />
+                                        </p>
+                                        <p className="text-sm text-gray-200">TEST AVAILABLE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="carousel-item hidden absolute top-0 left-0 w-full h-full">
+                        <div className="w-full h-full p-4 sm:p-8">
+                                <div className="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden relative group">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1515462277126-2dd0c162007a?auto=format&fit=crop&q=80"
+                                    alt="Geometric art installation"
+                                    fill
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/50 to-black/50 "></div>
+                                <div className="absolute inset-x-0 p-4 sm:p-8 ">
+                                    <h3 className="text-white text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">The Friend Words</h3>
+                                    <p className="flex items-center my-2 text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl">
+                                        <span className="mr-2">
+                                        <CheckBadgeIcon className="h-5 w-5" />
+                                        </span>
+                                        MEDIUM
+                                    </p>
+                                    <p className="flex items-center my-2 text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl">
+                                        <span className="mr-2">
+                                        <HashtagIcon className="h-5 w-5" />
+                                        </span>
+                                        35 WORDS
+                                    </p>
+                                </div>
+                                {/* <div className="absolute inset-x-0 bottom-0 p-4 sm:p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent"> */}
+                                <div className="absolute inset-x-0 bottom-0 p-4 sm:p-8 ">
+
+
+                                    <div className="mt-auto flex  justify-between">
+
+                                        <div className="text-center">
+                                            <p className="text-xl sm:text-3xl md:text-5xl font-bold text-gray-200">35</p>
+                                            <p className="text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl">LEARNING WORDS</p>
+                                        </div>
+                                        <div className="text-center">
+                                            <p className="text-xl sm:text-3xl md:text-5xl font-bold text-gray-200">0</p>
+                                            <p className="text-sm text-gray-200">MASTERED WORDS</p>
+                                        </div>
+                                        <div className="text-center">
+                                        <p className="flex justify-center text-gray-200">
+                                            <CheckIcon className="h-7 w-7 sm:h-9 sm:w-9 md:h-12 md:w-12" />
+                                        </p>
+                                        <p className="text-sm text-gray-200">TEST AVAILABLE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="carousel-item hidden absolute top-0 left-0 w-full h-full">
+                        <div className="w-full h-full p-4 sm:p-8">
+                                <div className="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden relative group">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1515462277126-2dd0c162007a?auto=format&fit=crop&q=80"
+                                    alt="Futuristic tech setup"
                                         fill
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
@@ -282,7 +386,20 @@ export default function Page() {
                     <button className="w-8 sm:w-12 h-1 sm:h-1.5 rounded-full bg-white/20 hover:bg-white/60 transition-colors" title="Go to slide 2"></button>
                     <button className="w-8 sm:w-12 h-1 sm:h-1.5 rounded-full bg-white/20 hover:bg-white/60 transition-colors" title="Go to slide 3"></button>
                 </div>
-            </div>
+                </div>
+
+
+            <footer className=" bottom-0 left-0 right-0 mt-auto flex justify-between font-bold  mt-12 p-8 pt-16">
+
+                <div className="flex items-center ">
+                <Square2StackIcon className="h-10 w-10" />
+                PACKS
+                </div>
+
+                <div className="flex items-center">
+                <UserIcon className="h-10 w-10" />
+                YOU</div>
+            </footer>
         </div>
 
     </div>
