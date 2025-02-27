@@ -1,0 +1,64 @@
+{% extends "base.html" %} {% block content %}
+<div class="ui main container">
+  <span class="value"> {{ total_cards }} </span>
+  <span class="label"> Card(s) </span>
+  <span class="value"> {{ all_categories_len }} </span>
+  <span class="label"> Different Categories </span>
+
+  <div class="ui tall stacked segment">
+    <a class="ui black ribbon label">Category</a>
+    <div class="ui header ellipsis category>{{ card.category }}</div>
+  </div>
+
+  <div>
+    <a class="ui green ribbon label">Question</a>
+    <div
+      class="ui green right corner label"
+      data-content="Add a new Flas(k) Card."
+      data-position="right center"
+    >
+      <a href="/cards/new"><i class="add icon" style="cursor: pointer"></i></a>
+    </div>
+
+    <div class="ui header ellipsis question">{{ card.question }}</div>
+  </div>
+
+  <i class="filter icon"></i>
+  <span class="text">Filter Cards</span>
+  <div class="scrollable menu">
+    <div class="ui search icon input">
+      <i class="search icon"></i>
+      <input type="text" name="search" placeholder="Search cards..." />
+    </div>
+
+    <div class="header">
+      <i class="tags icon"></i>
+      Filter by category
+    </div>
+    <a class="item" href="/cards/category/general">
+      <div class="ui blue empty circular label"></div>
+      General
+    </a>
+    <a class="item" href="/cards/category/code">
+      <div class="ui yellow empty circular label"></div>
+      Code
+    </a>
+    <a class="item" href="/cards">
+      <div class="ui green empty circular label"></div>
+      All
+    </a>
+
+    <div class="header">
+      <i class="code icon"></i>
+      Filter by Category
+    </div>
+    {% set seq = ['blue', 'red', 'green', 'yellow', 'black', 'olive', 'violet',
+    'orange', 'purple', 'pink', 'brown'] %} {% for card in all_categories%}
+    <a class="item" href="/cards/category/{{ card }}">
+      <i class="{{ seq | random }} circle icon"></i>
+      {{ card }}
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

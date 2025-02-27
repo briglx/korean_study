@@ -98,6 +98,17 @@ One exception is for logging which uses the percentage formatting. This is to av
 _LOGGER.info("Can't connect to the webservice %s at %s", string1, string2)
 ```
 
+### Running the app
+
+```bash
+# Run backend
+python -m flask --app api/routes --debug run
+
+# Run frontend
+cd ./webapp
+npm run dev
+```
+
 ### Testing
 
 Ideally, all code is checked to verify the following:
@@ -119,3 +130,5 @@ shellcheck -x ./script/*.sh
 # References
 
 - Package Python Projects https://packaging.python.org/en/latest/tutorials/packaging-projects/
+- Example Flashcard app https://github.com/RafaelBroseghini/Flask-Cards/
+- Example Flashcard design https://dribbble.com/shots/14590095-Flash-Cards-Vocabulary-Builder
