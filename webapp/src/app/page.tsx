@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { HashtagIcon, CheckBadgeIcon, CheckIcon, Square2StackIcon, UserIcon} from '@heroicons/react/24/outline';
 
 
