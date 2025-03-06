@@ -151,16 +151,14 @@ export default function Page() {
 
 
     return (
-    <div>
-        <div className="fixed inset-0 -z-10">
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-900/20 via-purple-900/20 to-fuchsia-900/20"></div>
-            <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-96 sm:h-96 bg-violet-500/10 rounded-full filter blur-3xl"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-96 sm:h-96 bg-fuchsia-500/10 rounded-full filter blur-3xl"></div>
-        </div>
+        <div className="flex flex-col min-h-screen">
 
-
-        {/* <!-- Main container --> */}
-        <div className="w-full max-w-6xl mx-auto">
+            {/* background */}
+            <div className="fixed inset-0 -z-10">
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-900/20 via-purple-900/20 to-fuchsia-900/20"></div>
+                <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-96 sm:h-96 bg-violet-500/10 rounded-full filter blur-3xl"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-96 sm:h-96 bg-fuchsia-500/10 rounded-full filter blur-3xl"></div>
+            </div>
 
             <header className="my-10 flex items-center justify-between mx-6">
                 <span className="text-3xl font-bold ">PACKS</span>
@@ -168,7 +166,7 @@ export default function Page() {
             </header>
 
             {/* <!-- Carousel container --> */}
-            <div className="carousel-container relative">
+            <div className="carousel-container relative" style={{ height: 'calc(100vh - 250px)' }}>
                 {/* <!-- Progress bar --> */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-white/10 rounded-full overflow-hidden z-20">
                     <div className="progress-bar absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
@@ -188,7 +186,8 @@ export default function Page() {
                 </button>
 
                 {/* <!-- Carousel track --> */}
-                <div className="carousel-track relative h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden">
+                {/* <div className="carousel-track relative h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden"> */}
+                <div className="carousel-track relative h-full overflow-hidden">
 
                     <div className="carousel-item active absolute top-0 left-0 w-full h-full">
                         <div className="w-full h-full p-4 sm:p-8">
@@ -386,10 +385,10 @@ export default function Page() {
                     <button className="w-8 sm:w-12 h-1 sm:h-1.5 rounded-full bg-white/20 hover:bg-white/60 transition-colors" title="Go to slide 2"></button>
                     <button className="w-8 sm:w-12 h-1 sm:h-1.5 rounded-full bg-white/20 hover:bg-white/60 transition-colors" title="Go to slide 3"></button>
                 </div>
-                </div>
+            </div>
 
 
-            <footer className=" bottom-0 left-0 right-0 mt-auto flex justify-between font-bold  mt-12 p-8 pt-16">
+            <footer className="mt-auto flex justify-between font-bold  mt-12 p-8 pt-16">
 
                 <div className="flex items-center ">
                 <Square2StackIcon className="h-10 w-10" />
@@ -400,8 +399,8 @@ export default function Page() {
                 <UserIcon className="h-10 w-10" />
                 YOU</div>
             </footer>
-        </div>
 
-    </div>
+
+        </div>
       );
 }
